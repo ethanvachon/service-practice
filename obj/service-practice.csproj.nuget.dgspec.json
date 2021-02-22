@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ethan\\source\\codeworks\\Week-10\\service-practice\\service-practice.csproj": {}
+    "C:\\Users\\Ethan\\Documents\\codeworks\\service-practice\\service-practice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ethan\\source\\codeworks\\Week-10\\service-practice\\service-practice.csproj": {
+    "C:\\Users\\Ethan\\Documents\\codeworks\\service-practice\\service-practice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ethan\\source\\codeworks\\Week-10\\service-practice\\service-practice.csproj",
+        "projectUniqueName": "C:\\Users\\Ethan\\Documents\\codeworks\\service-practice\\service-practice.csproj",
         "projectName": "service-practice",
-        "projectPath": "C:\\Users\\ethan\\source\\codeworks\\Week-10\\service-practice\\service-practice.csproj",
-        "packagesPath": "C:\\Users\\ethan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ethan\\source\\codeworks\\Week-10\\service-practice\\obj\\",
+        "projectPath": "C:\\Users\\Ethan\\Documents\\codeworks\\service-practice\\service-practice.csproj",
+        "packagesPath": "C:\\Users\\Ethan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ethan\\Documents\\codeworks\\service-practice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ethan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Ethan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -32,6 +32,8 @@ namespace service_practice
     {
       services.AddTransient<PostsService>();
       services.AddTransient<PostRepository>();
+      services.AddTransient<CommentsService>();
+      services.AddTransient<CommentsRepository>();
 
       services.AddCors(options =>
                 {

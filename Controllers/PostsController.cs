@@ -11,9 +11,12 @@ namespace service_practice
   public class PostsController : ControllerBase
   {
     private readonly PostsService _ps;
-    public PostsController(PostsService ps)
+    private readonly CommentsService _commentsService;
+
+    public PostsController(PostsService ps, CommentsService commentsService)
     {
       _ps = ps;
+      _commentsService = commentsService;
     }
 
     [HttpGet]
@@ -42,6 +45,20 @@ namespace service_practice
         return BadRequest(e.Message);
       }
     }
+
+    [HttpGet("{id}/comments")]
+    public ActionResult<IEnumerable<Comment>> GetCommentsByPost(int id)
+    {
+      try
+      {
+        return Ok(_commentsService.GetCommentsByPost(id));
+      }
+      catch (System.Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
 
     [HttpPost]
     public ActionResult<Post> Create([FromBody] Post newPost)
