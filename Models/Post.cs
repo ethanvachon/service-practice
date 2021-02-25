@@ -10,5 +10,9 @@ namespace service_practice.Models
     [Required]
     public string Body { get; set; }
     public int Id { get; set; }
+
+    public string creatorId { get; set; }
+
+    public Profile Creator { get; set; }
   }
 }

@@ -1,8 +1,10 @@
+using CodeWorks.Auth0Provider;
 using Microsoft.AspNetCore.Mvc;
 using service_practice.Models;
 using service_practice.Services;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace service_practice
 {
@@ -61,10 +63,12 @@ namespace service_practice
 
 
     [HttpPost]
-    public ActionResult<Post> Create([FromBody] Post newPost)
+    public async Task<ActionResult<Post>> Create([FromBody] Post newPost)
     {
       try
       {
+        Profile prof = await HttpContext.GetUserInfoAsync<Profile>();
+        newPost.creatorId = prof.Id;
         Post post = _ps.Create(newPost);
         return Ok(post);
       }

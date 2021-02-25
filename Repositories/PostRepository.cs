@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Dapper;
 using service_practice.Models;
 
@@ -23,8 +24,18 @@ namespace service_practice.Repositories
 
     public Post GetById(int id)
     {
-      string sql = "SELECT * FROM posts WHERE id = @id;";
-      return _db.QueryFirstOrDefault<Post>(sql, new { id });
+      string sql = @"
+      SELECT
+      p.*,
+      pr.*
+      FROM posts p
+      JOIN profiles pr On p.creatorId = pr.id
+      WHERE id = @id";
+      return _db.Query<Post, Profile, Post>(sql, (post, profile) =>
+      {
+        post.Creator = profile;
+        return post;
+      }, new { id }, splitOn: "id").FirstOrDefault();
     }
     public Post Create(Post newPost)
     {

@@ -9,7 +9,7 @@ using service_practice.Services;
 namespace service_practice.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")]
+  [Route("[controller]")]
   [Authorize]
   public class AccountController : ControllerBase
   {

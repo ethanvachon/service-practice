@@ -26,7 +26,7 @@ namespace service_practice.Repositories
       INSERT INTO profiles
       (name, picture, email, id)
       VALUES
-      (@Name, @Picture, @Email, @id)
+      (@Name, @Picture, @Email, @Id)
       ;";
       _db.Execute(sql, userInfo);
       return userInfo;
