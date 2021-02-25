@@ -20,7 +20,7 @@ namespace service_practice.Repositories
       return _db.QueryFirstOrDefault<Profile>(sql, new { id });
     }
 
-    internal object Create(Profile userInfo)
+    internal Profile Create(Profile userInfo)
     {
       string sql = @"
       INSERT INTO profiles

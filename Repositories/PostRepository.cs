@@ -41,9 +41,9 @@ namespace service_practice.Repositories
     {
       string sql = @"
       INSERT INTO posts
-      (title, body)
+      (title, body, creatorId)
       VALUES
-      (@Title, @Body);
+      (@Title, @Body, @CreatorId);
       SELECT LAST_INSERT_ID()";
       int id = _db.ExecuteScalar<int>(sql, newPost);
       newPost.Id = id;
@@ -55,9 +55,10 @@ namespace service_practice.Repositories
       throw new NotImplementedException();
     }
 
-    public Post Delete(Post postToRemove)
+    public void Delete(int id)
     {
-      throw new NotImplementedException();
+      string sql = "DELETE FROM posts WHERE id = @id;";
+      _db.Execute(sql, new { id });
     }
 
   }

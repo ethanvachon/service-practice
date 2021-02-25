@@ -23,7 +23,7 @@ namespace service_practice.Services
       return profile;
     }
 
-    internal object GetOrCreateProfile(Profile userInfo)
+    internal Profile GetOrCreateProfile(Profile userInfo)
     {
       Profile profile = _repo.GetById(userInfo.Id);
       if (profile == null)

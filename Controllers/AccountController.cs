@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeWorks.Auth0Provider;
 using Microsoft.AspNetCore.Authorization;
@@ -34,5 +35,23 @@ namespace service_practice.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    // [HttpGet("{id}/posts")]
+    // public async Task<ActionResult<IEnumerable<Post>>> GetPostsByAccount(string id)
+    // {
+    //   try
+    //   {
+    //     Profile userInfo = await HttpContext.GetUserInfoAsync<Profile>();
+    //     if (userInfo == null)
+    //     {
+
+    //     }
+    //   }
+    //   catch (System.Exception e)
+    //   {
+    //     return BadRequest(e.Message);
+    //   }
+    // }
+
   }
 }

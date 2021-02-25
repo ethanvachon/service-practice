@@ -42,7 +42,11 @@ namespace service_practice.Services
     public string Delete(int id)
     {
       Post postToRemove = Get(id);
-      _repo.Delete(postToRemove);
+      if (postToRemove == null)
+      {
+        throw new Exception("invalid id");
+      }
+      _repo.Delete(id);
       return "deleted";
     }
   }
