@@ -60,3 +60,12 @@ C:\Users\Ethan\Documents\codeworks\service-practice\obj\Debug\net5.0\scopedcss\b
 C:\Users\Ethan\Documents\codeworks\service-practice\obj\Debug\net5.0\service-practice.RazorTargetAssemblyInfo.cache
 C:\Users\Ethan\Documents\codeworks\service-practice\obj\Debug\net5.0\service-practice.csproj.CopyComplete
 C:\Users\Ethan\Documents\codeworks\service-practice\obj\Debug\net5.0\service-practice.genruntimeconfig.cache
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\CodeWorks.Auth0Provider.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\ethan\source\codeworks\Week-10\service-practice\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

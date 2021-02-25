@@ -15,6 +15,7 @@ using service_practice.Repositories;
 using service_practice.Services;
 using System.Data;
 using MySqlConnector;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace service_practice
 {
@@ -30,10 +31,23 @@ namespace service_practice
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+
+      services.AddAuthentication(options =>
+      {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+      }).AddJwtBearer(options =>
+      {
+        options.Authority = $"https://{Configuration["Auth0:Domain"]}";
+        options.Audience = Configuration["Auth0:Audience"];
+      });
+
       services.AddTransient<PostsService>();
       services.AddTransient<PostRepository>();
       services.AddTransient<CommentsService>();
       services.AddTransient<CommentsRepository>();
+      services.AddTransient<ProfilesService>();
+      services.AddTransient<ProfilesRepository>();
 
       services.AddCors(options =>
                 {
@@ -78,6 +92,8 @@ namespace service_practice
       app.UseHttpsRedirection();
 
       app.UseRouting();
+
+      app.UseAuthentication();
 
       app.UseAuthorization();
 
