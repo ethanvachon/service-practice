@@ -18,8 +18,13 @@ namespace service_practice.Repositories
 
     public IEnumerable<Post> GetAll()
     {
-      string sql = "SELECT * FROM posts;";
-      return _db.Query<Post>(sql);
+      string sql = @"
+      SELECT
+      p.*,
+      pr.*
+      FROM posts p
+      JOIN profiles pr ON p.creatorId = pr.id";
+      return _db.Query<Post, Profile, Post>(sql, (post, profile) => { post.Creator = profile; return post; }, splitOn: "id");
     }
 
     public Post GetById(int id)
@@ -30,7 +35,7 @@ namespace service_practice.Repositories
       pr.*
       FROM posts p
       JOIN profiles pr On p.creatorId = pr.id
-      WHERE id = @id";
+      WHERE p.id = @id";
       return _db.Query<Post, Profile, Post>(sql, (post, profile) =>
       {
         post.Creator = profile;
