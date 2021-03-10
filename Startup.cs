@@ -97,6 +97,10 @@ namespace service_practice
 
       app.UseAuthorization();
 
+      app.UseDefaultFiles();
+
+      app.UseStaticFiles();
+
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapControllers();
