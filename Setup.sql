@@ -20,10 +20,15 @@ USE firstdatabase123;
 --   id int AUTO_INCREMENT NOT NULL,
 --   body VARCHAR(255) NOT NULL,
 --   postId int NOT NULL,
+--   creatorId VARCHAR(255) NOT NULL,
 
 --   PRIMARY KEY(id),
 
 --   FOREIGN KEY (postId)
 --     REFERENCES posts (id)
+--     ON DELETE CASCADE,
+
+--   FOREIGN KEY (creatorId)
+--     REFERENCES profiles (id)
 --     ON DELETE CASCADE
 -- );

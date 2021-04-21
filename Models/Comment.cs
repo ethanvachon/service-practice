@@ -4,17 +4,7 @@ namespace service_practice.Models
 {
   public class Comment
   {
-    public Comment()
-    {
-
-    }
-    public Comment(int id, string body, int postId, Post post)
-    {
-      Id = id;
-      Body = body;
-      PostId = postId;
-      Post = post;
-    }
+    public string creatorId { get; set; }
 
     [Required]
     public int Id { get; set; }
@@ -24,5 +14,6 @@ namespace service_practice.Models
     [Required]
     public int PostId { get; set; }
     public Post Post { get; set; }
+    public Profile Creator { get; set; }
   }
 }

@@ -21,14 +21,17 @@ namespace service_practice.Repositories
       string sql = @"
       SELECT
       c.*,
-      p.*
+      p.*,
+      pr.*
       FROM comments c
       JOIN posts p ON c.postId = p.id
+      JOIN profiles pr ON c.creatorId = pr.id
       WHERE postId = @id;
       ";
-      return _db.Query<Comment, Post, Comment>(sql, (comment, post) =>
+      return _db.Query<Comment, Post, Profile, Comment>(sql, (comment, post, profile) =>
       {
         comment.Post = post;
+        comment.Creator = profile;
         return comment;
       }, new { id }, splitOn: "id");
     }
