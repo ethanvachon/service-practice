@@ -37,9 +37,9 @@ namespace service_practice.Repositories
     {
       string sql = @"
       INSERT INTO comments
-      (body, postId)
+      (body, postId, creatorId)
       VALUES
-      (@body, @postId);
+      (@body, @postId, @creatorId);
       SELECT LAST_INSERT_ID();";
       int id = _db.ExecuteScalar<int>(sql, newComment);
       newComment.Id = id;

@@ -2,7 +2,6 @@ USE firstdatabase123;
 
 
 
-
 -- CREATE TABLE posts (
 --   id int AUTO_INCREMENT NOT NULL,
 --   title VARCHAR(255) NOT NULL,
@@ -15,7 +14,6 @@ USE firstdatabase123;
 --     REFERENCES profiles(id)
 --     ON DELETE CASCADE
 -- );
--- ADD creatorId VARCHAR(255) NOT NULL;
 
 
 -- CREATE TABLE comments (
